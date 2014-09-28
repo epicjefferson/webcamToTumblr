@@ -38,11 +38,10 @@ while True:
     if io.input(pir_pin):
 		os.system('sudo fswebcam -r 640x480 -S 20 webcam.jpg')
 
-		#Creates a photo post using a local filepath, 
-		#make sure you point to the appropriate image location, 
-		#In this example, the webcam.jpg was saved to the current folder
-		#Ex. from yourBlogName.tumblr.com should just use yourBlogName
-		#here the default state is set to "queue", to publish use "published"
+		#Posts an image to your tumblr 
+		#make sure you point an image in your hard drive. 
+		#From yourBlogName.tumblr.com should just use 'yourBlogName'
+		#The default state is set to "queue", to publish use "published"
 		client.create_photo('yourBlogName', state="published", tags=["testing", "ok"], data="webcam.jpg")
 		time.sleep(5)
     time.sleep(0.25)
